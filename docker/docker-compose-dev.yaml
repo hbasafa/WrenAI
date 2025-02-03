@@ -45,7 +45,6 @@ services:
       # using PYTHONUNBUFFERED: 1 can fix this
       PYTHONUNBUFFERED: 1
       CONFIG_PATH: /app/data/config.yaml
-      LLM_OPENAI_API_KEY: ${LLM_OPENAI_API_KEY}
     env_file:
       - ${PROJECT_DIR}/.env
     volumes:
