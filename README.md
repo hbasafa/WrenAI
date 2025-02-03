@@ -207,3 +207,7 @@ Please note that our [Code of Conduct](./CODE_OF_CONDUCT.md) applies to all Wren
 <p align="right">
   <a href="#top">⬆️ Back to Top</a>
 </p>
+
+## Future works
+- set sensitive parameters in ```docker secrets```
+
