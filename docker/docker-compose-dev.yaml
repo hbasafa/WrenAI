@@ -136,7 +136,7 @@ services:
   #     - wren
 
   trinodb:
-    image: trinodb/trino:468-amd64
+    image: trinodb/trino:432
     restart: on-failure
     platform: ${PLATFORM}
     container_name: trino
