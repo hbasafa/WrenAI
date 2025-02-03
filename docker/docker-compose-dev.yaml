@@ -2,6 +2,8 @@ version: "3"
 
 volumes:
   data:
+  trino-config:
+  trino-data:
 
 networks:
   wren:
@@ -76,22 +78,6 @@ services:
     networks:
       - wren
 
-  # # If you want to use postgres for testing purpose, uncomment the following block
-  # postgres:
-  #   image: postgres:14-alpine
-  #   platform: ${PLATFORM}
-  #   ports:
-  #     - 9432:5432
-  #   volumes:
-  #     - data:/var/lib/postgresql/data
-  #   environment:
-  #     - POSTGRES_PASSWORD=secret
-  #     - POSTGRES_USER=test
-  #     - POSTGRES_DB=test
-  #     - PGDATA=/var/lib/postgresql/data/pgdata
-  #   networks:
-  #     - wren
-
   wren-ui:
     image: ghcr.io/canner/wren-ui:${WREN_UI_VERSION}
     restart: on-failure
@@ -132,3 +118,34 @@ services:
     depends_on:
       - wren-ai-service
       - wren-engine
+
+  # # If you want to use postgres for testing purpose, uncomment the following block
+  # postgres:
+  #   image: postgres:14-alpine
+  #   platform: ${PLATFORM}
+  #   ports:
+  #     - 9432:5432
+  #   volumes:
+  #     - data:/var/lib/postgresql/data
+  #   environment:
+  #     - POSTGRES_PASSWORD=secret
+  #     - POSTGRES_USER=test
+  #     - POSTGRES_DB=test
+  #     - PGDATA=/var/lib/postgresql/data/pgdata
+  #   networks:
+  #     - wren
+
+  trinodb:
+    image: trinodb/trino:468
+    restart: on-failure
+    platform: ${PLATFORM}
+    container_name: trino
+    ports:
+      - "8080:8080"
+    volumes:
+      - trino-config:/etc/trino
+      - trino-data:/data
+    environment:
+      - TRINO_MEMORY=2G
+    restart: always
+
