@@ -141,7 +141,7 @@ services:
     platform: ${PLATFORM}
     container_name: trino
     ports:
-      - "8080:8080"
+      - "9080:8080"
     volumes:
       - trino-config:/etc/trino
       - trino-data:/data
