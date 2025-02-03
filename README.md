@@ -191,8 +191,8 @@ Want to contribute to Wren AI? Check out our [Contribution Guidelines](https://g
 Please note that our [Code of Conduct](./CODE_OF_CONDUCT.md) applies to all Wren AI community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
 
 ## 🎉 Our Contributors
-<a href="https://github.com/hbasafa" width="50" height="50" style="display: inline-block; position: relative; width: 50px; height: 50px; overflow: hidden; border-radius: 50%;">
-  <img src="https://avatars.githubusercontent.com/u/30258093?v=4" />
+<a href="https://github.com/hbasafa">
+  <img src="https://avatars.githubusercontent.com/u/30258093?v=4" width="50" height="50" style="display: inline-block; position: relative; width: 50px; height: 50px; overflow: hidden; border-radius: 50%;"/>
 </a>
 <a href="https://github.com/canner/wrenAI/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Canner/WrenAI" />
