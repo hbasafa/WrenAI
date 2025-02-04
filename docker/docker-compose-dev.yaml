@@ -147,4 +147,5 @@ services:
       - trino-data:/data
     environment:
       - TRINO_MEMORY=2G
+      - CATALOG_MANAGEMENT=dynamic
 
