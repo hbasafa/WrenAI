@@ -1,9 +1,7 @@
 version: "3"
 
 volumes:
-  data:./data
-  trino-config:./trino/config
-  trino-data:./trino/data
+  data:
 
 networks:
   wren:
@@ -144,8 +142,8 @@ services:
     ports:
       - "9080:8080"
     volumes:
-      - trino-config:/etc/trino
-      - trino-data:/data
+      - ./trino/config:/etc/trino
+      - ./trino/data:/data
     environment:
       - TRINO_MEMORY=2G
       - CATALOG_MANAGEMENT=dynamic
