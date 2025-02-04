@@ -138,6 +138,7 @@ services:
   postgres:
     image: postgres:14-alpine
     platform: ${PLATFORM}
+    container_name: postgres
     ports:
       - 9432:5432
     volumes:
