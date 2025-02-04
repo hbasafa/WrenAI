@@ -6,19 +6,19 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ./data
+      device: ${PWD}/data
   trino-config:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: ./trino/config
+      device: ${PWD}/trino/config
   trino-data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: ./trino/data
+      device: ${PWD}/trino/data
 
 networks:
   wren:
