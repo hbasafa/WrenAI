@@ -1,24 +1,9 @@
 version: "3"
 
 volumes:
-  data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${PWD}/data
-  trino-config:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${PWD}/trino/config
-  trino-data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${PWD}/trino/data
+  data:./data
+  trino-config:./trino/config
+  trino-data:./trino/data
 
 networks:
   wren:
