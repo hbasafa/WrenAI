@@ -2,8 +2,23 @@ version: "3"
 
 volumes:
   data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: data
   trino-config:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: trino/config
   trino-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: trino/data
 
 networks:
   wren:
@@ -148,4 +163,6 @@ services:
     environment:
       - TRINO_MEMORY=2G
       - CATALOG_MANAGEMENT=dynamic
+      - TRINO_CONFIG_PROPERTIES=/etc/trino/config.properties
+      - TRINO_JVM_CONFIG=/etc/trino/jvm.config
 
