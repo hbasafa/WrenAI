@@ -142,8 +142,10 @@ services:
     ports:
       - "9080:8080"
     volumes:
-      - ./trino/config:/etc/trino
-      - ./trino/data:/data
+      - trino-config:/etc/trino
+      - trino-data:/data
+      - ./trino/config:/tmp/trino/config
+    entrypoint: ["/bin/sh", "-c", "cp -r /tmp/trino/config/* /etc/trino/ && exec /usr/lib/trino/bin/launcher run"]
     environment:
       - TRINO_MEMORY=2G
       - CATALOG_MANAGEMENT=dynamic
