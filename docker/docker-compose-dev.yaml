@@ -125,7 +125,6 @@ services:
     ports:
       - "9080:8080"
     volumes:
-      - data:/data
       - ./trino/config:/etc/trino/
     environment:
       - TRINO_MEMORY=2G
