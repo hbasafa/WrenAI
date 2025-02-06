@@ -119,6 +119,23 @@ services:
       - wren-ai-service
       - wren-engine
 
+  trinodb:
+    image: trinodb/trino:418
+    restart: on-failure
+    platform: ${PLATFORM}
+    container_name: trino
+    ports:
+      - "9080:8080"
+    volumes:
+      - ./trino/config:/etc/trino/
+    environment:
+      - TRINO_MEMORY=2G
+      - CATALOG_MANAGEMENT=dynamic
+      - TRINO_CONFIG_PROPERTIES=/etc/trino/config.properties
+      - TRINO_JVM_CONFIG=/etc/trino/jvm.config
+    depends_on:
+      - postgres
+
   # If you want to use postgres for testing purpose, uncomment the following block
   postgres:
     image: postgres:14-alpine
@@ -135,19 +152,4 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     networks:
       - wren
-
-  trinodb:
-    image: trinodb/trino:418
-    restart: on-failure
-    platform: ${PLATFORM}
-    container_name: trino
-    ports:
-      - "9080:8080"
-    volumes:
-      - ./trino/config:/etc/trino/
-    environment:
-      - TRINO_MEMORY=2G
-      - CATALOG_MANAGEMENT=dynamic
-      - TRINO_CONFIG_PROPERTIES=/etc/trino/config.properties
-      - TRINO_JVM_CONFIG=/etc/trino/jvm.config
 
