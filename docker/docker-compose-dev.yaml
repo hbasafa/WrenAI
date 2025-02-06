@@ -142,7 +142,7 @@ services:
     platform: ${PLATFORM}
     container_name: postgres
     ports:
-      - 5432:5432
+      - 9432:5432
     volumes:
       - data:/var/lib/postgresql/data
     environment:
