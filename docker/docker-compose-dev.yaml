@@ -167,7 +167,7 @@ services:
     volumes:
       - ./mongodb/config:/data/configdb
       - ./mongodb/data:/data/db
-      - ./sample-data-mongo.json:/tmp/data.json
+      - ./sample-data/:/tmp/data/
     networks:
       - wren
 
