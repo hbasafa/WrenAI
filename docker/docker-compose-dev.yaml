@@ -126,7 +126,7 @@ services:
       - "9080:8080"
     volumes:
       - ./trino/config:/etc/trino/
-      - ./trino/data:/data
+      # - ./trino/data:/data
     environment:
       - TRINO_MEMORY=2G
       - CATALOG_MANAGEMENT=dynamic
@@ -155,7 +155,7 @@ services:
       - wren
 
   mongodb:
-    image: mongo:6.0
+    image: mongo:4.4
     container_name: mongodb
     restart: always
     ports:
@@ -164,8 +164,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: test
       MONGO_INITDB_ROOT_PASSWORD: test
     volumes:
-      - ./mongodb/data:/data/db
       - ./mongodb/config:/data/configdb
+      - ./mongodb/data:/data/db
     networks:
       - wren
 
