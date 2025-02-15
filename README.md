@@ -205,3 +205,10 @@ Please note that our [Code of Conduct](./CODE_OF_CONDUCT.md) applies to all Wren
 ## Future works
 - set sensitive parameters in ```docker secrets```
 
+## References
+- https://medium.com/@qdrddr/wrenai-text-to-sql-api-the-good-stuff-e4d57c0c181c
+- https://docs.getwren.ai/oss/guide/connect/trino
+- https://api-docs.deepseek.com/
+- https://github.com/Canner/WrenAI
+- https://github.com/hbasafa/WrenAI
+- https://cannerdata.com/?utm_source=github&utm_medium=badge&utm_campaign=readme
