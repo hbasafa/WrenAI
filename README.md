@@ -212,3 +212,4 @@ Please note that our [Code of Conduct](./CODE_OF_CONDUCT.md) applies to all Wren
 - https://github.com/Canner/WrenAI
 - https://github.com/hbasafa/WrenAI
 - https://cannerdata.com/?utm_source=github&utm_medium=badge&utm_campaign=readme
+- https://trino.io/docs/current/connector/mongodb.html
